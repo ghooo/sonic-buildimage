@@ -1,0 +1,21 @@
+[
+    {
+        "path": "/VLAN_MEMBER/Vlan20|Ethernet4",
+        "op": "remove"
+    },
+    {
+        "path": "/VLAN/Vlan30",
+        "value": {
+            "vlanid": "30",
+            "members": [
+                "Ethernet4"
+            ]
+        },
+        "op": "add"
+    },
+    {
+        "path": "/VLAN/Vlan5/dhcp_servers",
+        "value": ["192.0.0.5", "192.0.0.7"],
+        "op": "add"
+    }
+]

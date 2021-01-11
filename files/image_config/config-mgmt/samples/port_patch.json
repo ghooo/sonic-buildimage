@@ -1,0 +1,7 @@
+[
+    {
+        "path": "/PORT/Ethernet44/description",
+        "value": "Servers10:eth0-junk",
+        "op": "add"
+    }
+]

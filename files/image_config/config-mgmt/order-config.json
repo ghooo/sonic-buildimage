@@ -1,0 +1,216 @@
+{
+    "groups": {
+        "host_group": 1,
+        "port_group": 2,
+        "mgmt_group": 5,
+        "acl_group": 6,
+        "bgp_group": 7,
+        "device_group": 3,
+        "buffer_group": 4,
+        "other_group": 10
+    },
+    "tables": {
+        "AAA" : {
+            "order_group": "host_group",
+            "order_index": 1,
+            "services_to_restart": []
+        },
+        "TACPLUS" : {
+            "order_group": "host_group",
+            "order_index": 2,
+            "services_to_restart": []
+        },
+        "TACPLUS_SERVER" : {
+            "order_group": "host_group",
+            "order_index": 3,
+            "services_to_restart": []
+        },
+        "SYSLOG_SERVER" : {
+            "order_group": "host_group",
+            "order_index": 4,
+            "services_to_restart": ["rsyslog"]
+        },
+        "DHCP_SERVER" : {
+            "order_group": "host_group",
+            "order_index": 5,
+            "services_to_restart": ["dhcp_relay"]
+        },
+        "FEATURE" : {
+            "order_group": "host_group",
+            "order_index": 6,
+            "services_to_restart": []
+        },
+        "NTP_SERVER" : {
+            "order_group": "host_group",
+            "order_index": 1,
+            "services_to_restart": ["ntp-config.service", "ntp.service"]
+        },
+        "MGMT_INTERFACE" : {
+            "order_group": "mgmt_group",
+            "order_index": 1,
+            "services_to_restart": ["ALL"]
+        },
+        "MGMT_PORT" : {
+            "order_group": "mgmt_group",
+            "order_index": 2,
+            "services_to_restart": []
+        },
+        "MGMT_VRF_CONFIG" : {
+            "order_group": "mgmt_group",
+            "order_index": 3,
+            "services_to_restart": []
+        },
+        "ACL_RULE" : {
+            "order_group": "acl_group",
+            "order_index": 1,
+            "services_to_restart": []
+        },
+        "ACL_TABLE" : {
+            "order_group": "acl_group",
+            "order_index": 2,
+            "services_to_restart": []
+        },
+        "BGP_MONITORS" : {
+            "order_group": "bgp_group",
+            "order_index": 1,
+            "services_to_restart": ["bgp"]
+        },
+        "BGP_NEIGHBOR" : {
+            "order_group": "bgp_group",
+            "order_index": 2,
+            "services_to_restart": ["bgp"]
+        },
+        "BGP_PEER_RANGE" : {
+            "order_group": "bgp_group",
+            "order_index": 3,
+            "services_to_restart": ["bgp"]
+        },
+        "BREAKOUT_CFG" : {
+            "order_group": "port_group",
+            "order_index": 4,
+            "services_to_restart": ["swss"]
+        },
+        "BUFFER_PG" : {
+            "order_group": "buffer_group",
+            "order_index": 2,
+            "services_to_restart": ["swss"]
+        },
+        "BUFFER_POOL" : {
+            "order_group": "buffer_group",
+            "order_index": 3,
+            "services_to_restart": ["swss"]
+        },
+        "BUFFER_PROFILE" : {
+            "order_group": "buffer_group",
+            "order_index": 4,
+            "services_to_restart": ["swss"]
+        },
+        "BUFFER_PORT_EGRESS_PROFILE_LIST" : {
+            "order_group": "buffer_group",
+            "order_index": 5,
+            "services_to_restart": ["swss"]
+        },
+        "BUFFER_PORT_INGRESS_PROFILE_LIST" : {
+            "order_group": "buffer_group",
+            "order_index": 6,
+            "services_to_restart": ["swss"]
+        },
+        "BUFFER_QUEUE" : {
+            "order_group": "buffer_group",
+            "order_index": 7,
+            "services_to_restart": ["swss"]
+        },
+        "CABLE_LENGTH" : {
+            "order_group": "buffer_group",
+            "order_index": 8,
+            "services_to_restart": ["swss"]
+        },
+        "DEVICE_METADATA" : {
+            "order_group": "device_group",
+            "order_index": 1,
+            "services_to_restart": []
+        },
+        "DEVICE_NEIGHBOR" : {
+            "order_group": "device_group",
+            "order_index": 1,
+            "services_to_restart": []
+        },
+        "DEVICE_NEIGHBOR_METADATA" : {
+            "order_group": "device_group",
+            "order_index": 1,
+            "services_to_restart": []
+        },
+        "INTERFACE" : {
+            "order_group": "other_group",
+            "order_index": 1,
+            "services_to_restart": ["swss"]
+        },
+        "PORT" : {
+            "order_group": "port_group",
+            "order_index": 1,
+            "services_to_restart": ["swss", "bgp"]
+        },
+        "PORTCHANNEL" : {
+            "order_group": "port_group",
+            "order_index": 3,
+            "services_to_restart": ["swss", "bgp"]
+        },
+        "PORTCHANNEL_INTERFACE" : {
+            "order_group": "port_group",
+            "order_index": 4,
+            "services_to_restart": ["swss", "bgp"]
+        },
+        "PORTCHANNEL_MEMBER" : {
+            "order_group": "port_group",
+            "order_index": 6,
+            "services_to_restart": ["swss", "bgp"]
+        },
+        "PORT_QOS_MAP" : {
+            "order_group": "buffer_group",
+            "order_index": 10,
+            "services_to_restart": ["swss"]
+        },
+        "QUEUE" : {
+            "order_group": "buffer_group",
+            "order_index": 11,
+            "services_to_restart": ["swss"]
+        },
+        "RESTAPI" : {
+            "order_group": "other_group",
+            "order_index": 1,
+            "services_to_restart": ["restapi"]
+        }
+    },
+    "services": {
+        "bgp": {
+            "auto_restart": [],
+            "warm_reboot": "true",
+            "dataplane_impact": "true"
+        },
+        "dhcp_relay": {
+            "auto_restart": [],
+            "dataplane_impact": "false"
+        },
+        "ntp_config": {
+            "auto_restart": [],
+            "dataplane_impact": "false"
+        },
+        "ntp": {
+            "auto_restart": [],
+            "dataplane_impact": "false"
+        },
+        "restapi": {
+            "auto_restart": [],
+            "dataplane_impact": "false"
+        },
+        "rsyslog": {
+            "auto_restart": [],
+            "dataplane_impact": "false"
+        },
+        "swss": {
+            "auto_restart": ["bgp"],
+            "warm_reboot": "true",
+            "dataplane_impact": "true"
+        }
+    }
+}

@@ -1,0 +1,7 @@
+[
+    {
+        "path": "/VLAN/Vlan1000/dhcp_servers",
+        "value": ["192.0.0.6", "192.0.0.8"],
+        "op": "add"
+    }
+]

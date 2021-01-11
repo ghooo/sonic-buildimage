@@ -1,0 +1,4 @@
+[
+    {"op": "remove", "path": "/DEVICE_NEIGHBOR/Ethernet8"},
+    {"op": "replace", "path": "/DEVICE_NEIGHBOR/Ethernet80/port", "value": "eth1"}
+]
