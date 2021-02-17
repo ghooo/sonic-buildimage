@@ -1,0 +1,55 @@
+{
+    "ACL_TABLE": {
+        "NO-NSW-PACL-V4": {
+            "policy_desc": "NO-NSW-PACL-V4",
+            "ports": [
+                "Ethernet0",
+                "Ethernet1",
+                "Ethernet2",
+                "Ethernet3",
+                "Ethernet5"
+            ],
+            "type": "L3"
+        }
+    },
+    "PORT": {
+        "Ethernet0": {
+            "alias": "Eth1/1",
+            "description": "",
+            "lanes": "65",
+            "speed": "10000"
+        },
+        "Ethernet1": {
+            "alias": "Eth1/2",
+            "description": "",
+            "lanes": "66",
+            "speed": "10000"
+        },
+        "Ethernet2": {
+            "alias": "Eth1/3",
+            "description": "",
+            "lanes": "67",
+            "speed": "10000"
+        },
+        "Ethernet3": {
+            "alias": "Eth1/4",
+            "description": "",
+            "lanes": "68",
+            "speed": "10000"
+        }
+    },
+    "VLAN_MEMBER": {
+        "Vlan100|Ethernet0": {
+            "tagging_mode": "untagged"
+        },
+        "Vlan100|Ethernet1": {
+            "tagging_mode": "untagged"
+        },
+        "Vlan100|Ethernet2": {
+            "tagging_mode": "untagged"
+        },
+        "Vlan100|Ethernet3": {
+            "tagging_mode": "untagged"
+        }
+    }
+}

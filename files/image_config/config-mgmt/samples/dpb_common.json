@@ -1,0 +1,20 @@
+{
+    "ACL_TABLE": {
+        "NO-NSW-PACL-V4": {
+            "policy_desc": "NO-NSW-PACL-V4",
+            "ports": [
+                "Ethernet0",
+                "Ethernet5"
+            ],
+            "type": "L3"
+        }
+    },
+    "PORT": {
+        "Ethernet0": {}
+    },
+    "VLAN_MEMBER": {
+        "Vlan100|Ethernet0": {
+            "tagging_mode": "untagged"
+        }
+    }
+}

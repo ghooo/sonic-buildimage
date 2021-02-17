@@ -1,15 +1,31 @@
 {
     "groups": {
-        "host_group": 1,
-        "port_group": 2,
-        "mgmt_group": 5,
-        "acl_group": 6,
-        "bgp_group": 7,
-        "device_group": 3,
-        "buffer_group": 4,
-        "other_group": 10
+        "host_group": 10,
+        "port_group": 20,
+        "vlan_group": 15,
+        "mgmt_group": 50,
+        "acl_group": 60,
+        "bgp_group": 70,
+        "device_group": 30,
+        "buffer_group": 40,
+        "other_group": 100
     },
     "tables": {
+        "KDUMP" : {
+            "order_group": "other_group",
+            "order_index": 1,
+            "services_to_restart": []
+        },
+        "VLAN" : {
+            "order_group": "vlan_group",
+            "order_index": 1,
+            "services_to_restart": []
+        },
+        "VLAN_MEMBER" : {
+            "order_group": "vlan_group",
+            "order_index": 1,
+            "services_to_restart": []
+        },
         "AAA" : {
             "order_group": "host_group",
             "order_index": 1,

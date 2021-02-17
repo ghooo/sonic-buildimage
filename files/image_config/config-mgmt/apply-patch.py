@@ -6,6 +6,7 @@ import json
 import copy
 import re
 import os
+from common import run_command
 
 verbose = False
 dry_run = False
@@ -31,18 +32,6 @@ def convertPatchToExtendedConfiglet(patch):
     if verbose:
         print_ecs(extendedConfiglets)
     return extendedConfiglets
-
-def run_command(command):
-    stream = os.popen(f'{command} > ./output.log 2>&1; echo $?')
-    result = int(stream.read())
-
-    stream = os.popen('cat ./output.log')
-    output = stream.read()
-
-    if result:
-        raise AttributeError(f'Apply command failed.\n  Command: {command}\n  Output: {output}')
-
-    return output
 
 def get_running_config():
     if dry_run and current_json_path != None:

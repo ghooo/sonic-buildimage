@@ -6,22 +6,11 @@ import json
 import copy
 import re
 import os
+from common import run_command
 
 verbose = False
 dry_run = False
 current_json_path = None
-
-def run_command(command):
-    stream = os.popen(f'{command} > ./output.log 2>&1; echo $?')
-    result = int(stream.read())
-
-    stream = os.popen('cat ./output.log')
-    output = stream.read()
-
-    if result:
-        raise AttributeError(f'Apply command failed.\n  Command: {command}\n  Output: {output}')
-
-    return output
 
 def get_running_config():
     if dry_run and current_json_path != None:
@@ -37,6 +26,7 @@ def get_running_config():
 
 def generate_patch(src, dst):
     patch = jsonpatch.make_patch(src, dst)
+
     if verbose:
         print(f"Patch: {patch}")
     return patch

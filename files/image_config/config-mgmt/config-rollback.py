@@ -2,22 +2,11 @@
 
 import os
 import argparse
+from common import run_command
 
 verbose = False
 dry_run = False
 checkpoint_folder = '/home/admin/config-mgmt/checkpoints'
-
-def run_command(command):
-    stream = os.popen(f'{command} > ./output.log 2>&1; echo $?')
-    result = int(stream.read())
-
-    stream = os.popen('cat ./output.log')
-    output = stream.read()
-
-    if result:
-        raise AttributeError(f'Apply command failed.\n  Command: {command}\n  Output: {output}')
-
-    return output
 
 def apply_rollback(checkpoint_name):
     command = f"./config-replace.py -j {checkpoint_folder}/{checkpoint_name}"

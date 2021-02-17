@@ -2,6 +2,5 @@
     { "path": "/PORTCHANNEL", "op": "remove" },
     { "path": "/PORT", "op": "remove" },
     { "path": "/TACPLUS_SERVER", "op": "remove" },
-    { "path": "/NTP_SERVER", "op": "remove" },
-    { "path": "/TACPLUS_SERVER", "op": "remove" }
+    { "path": "/NTP_SERVER", "op": "remove" }
 ]

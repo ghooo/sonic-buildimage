@@ -2123,7 +2123,6 @@
                 "Ethernet8",
                 "Ethernet12",
                 "Ethernet16",
-                "Ethernet20",
                 "Ethernet24",
                 "Ethernet28",
                 "Ethernet32",
@@ -2375,8 +2374,10 @@
         "Vlan1000": {
             "vlanid": "1000",
             "dhcp_servers": [
-                "192.0.0.6",
-                "192.0.0.8"
+                "192.0.0.1",
+                "192.0.0.2",
+                "192.0.0.3",
+                "192.0.0.4"
             ]
         }
     },
